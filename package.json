@@ -9,7 +9,7 @@
     "@types/express": "^4.0.35",
     "gulp": "^3.9.1",
     "gulp-typescript": "^3.1.6",
-    "typescript": "^2.2.2"
+    "typescript": "rc"
   },
   "dependencies": {
     "express": "^4.15.2"
