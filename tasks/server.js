@@ -15,6 +15,11 @@ const tsProject = ts.createProject(TS_CONFIG)
 function build () {
   return gulp.src(TS_FILES)
     .pipe(tsProject())
+    .on('error', function () {
+      if (process.env.NODE_ENV === 'production') {
+        process.exit(1)
+      }
+    })
     .js.pipe(gulp.dest(DIST))
 }
 
