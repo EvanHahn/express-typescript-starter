@@ -12,7 +12,7 @@ const BUILT_JS = path.join(DIST, 'index.js')
 let proc: childProcess.ChildProcess
 const tsProject = ts.createProject(TS_CONFIG)
 
-export function build () {
+gulp.task('server.build', function () {
   return gulp.src(TS_FILES)
     .pipe(tsProject())
     .on('error', function () {
@@ -21,21 +21,21 @@ export function build () {
       }
     })
     .js.pipe(gulp.dest(DIST))
-}
+})
 
-export function stop (done: () => any) {
+gulp.task('server.stop', function (done: () => any) {
   if (proc) {
     proc.on('exit', () => { done() })
     proc.kill()
   } else {
     done()
   }
-}
+})
 
-export function start () {
+gulp.task('server.start', ['server.stop', 'server.build'], function () {
   proc = childProcess.fork(BUILT_JS)
-}
+})
 
-export function development () {
+gulp.task('server.development', ['server.start'], function () {
   gulp.watch(TS_FILES, ['server.start'])
-}
+})

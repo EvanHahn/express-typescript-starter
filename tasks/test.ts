@@ -23,21 +23,21 @@ const DIST_UNIT_TESTS = path.join(DIST_UNIT, '**/*.js')
 
 const tsProject = ts.createProject(TS_CONFIG)
 
-export function lint () {
+gulp.task('test.lint', function () {
   const program = tslint.Linter.createProgram(TSLINT_PATH)
 
   return gulp.src(TS_FILES)
     .pipe(gulpTslint({ program }))
     .pipe(gulpTslint.report())
-}
+})
 
-export function buildUnit () {
+gulp.task('test.unit.build', ['server.build'], function () {
   return gulp.src(UNIT_TEST_FILES)
     .pipe(tsProject())
     .js.pipe(gulp.dest(DIST_UNIT))
-}
+})
 
-export function unit () {
+gulp.task('test.unit', ['test.unit.build'], function () {
   return gulp.src(DIST_UNIT_TESTS)
     .pipe(ava())
-}
+})

@@ -1,9 +1,7 @@
-export const development: () => void = nodeEnvSetter('development')
-export const production: () => void = nodeEnvSetter('production')
-export const test: () => void = nodeEnvSetter('production')
+import * as gulp from 'gulp'
 
-function nodeEnvSetter (value: string): () => void {
-  return function () {
-    process.env.NODE_ENV = value
-  }
-}
+['development', 'production', 'test'].forEach((env) => {
+  gulp.task('env.' + env, function () {
+    process.env.NODE_ENV = env
+  })
+})

@@ -4,7 +4,6 @@
   "scripts": {
     "start": "gulp start",
     "development": "gulp development",
-    "pretest": "gulp lint",
     "test": "gulp test"
   },
   "devDependencies": {
