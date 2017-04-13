@@ -6,7 +6,7 @@ import * as childProcess from 'child_process'
 const ROOT = path.join(__dirname, '..')
 const TS_CONFIG = path.join(ROOT, 'tsconfig.json')
 const TS_FILES = path.join(ROOT, 'server', '**/*.ts')
-const DIST = path.join(ROOT, 'dist')
+const DIST = path.join(ROOT, 'dist', 'server')
 const BUILT_JS = path.join(DIST, 'index.js')
 
 let proc: childProcess.ChildProcess

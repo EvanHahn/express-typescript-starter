@@ -13,7 +13,8 @@ gulp.task('server.start', ['server.stop', 'server.build'], serverTasks.start)
 gulp.task('server.development', ['server.start'], serverTasks.development)
 
 gulp.task('test.lint', testTasks.lint)
-gulp.task('test.unit', function () { /* TODO */ })
+gulp.task('test.unit', ['server.build', 'test.unit.build'], testTasks.unit)
+gulp.task('test.unit.build', testTasks.buildUnit)
 
 gulp.task('start', ['env.production', 'server.start'])
 gulp.task('development', ['env.development', 'server.development'])
