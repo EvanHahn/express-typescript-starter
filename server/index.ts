@@ -12,7 +12,7 @@ app.use(function (req, res) {
 
 if (require.main === module) {
   app.listen(app.get('port'), () => {
-    console.log('App started on port ' + app.get('port'))
+    console.log('App started in ' + app.get('env') + ' mode on port ' + app.get('port'))
   })
 }
 

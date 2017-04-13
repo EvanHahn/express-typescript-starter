@@ -1,7 +1,7 @@
-const gulp = require('gulp')
-const path = require('path')
-const ts = require('gulp-typescript')
-const fork = require('child_process').fork
+import * as gulp from 'gulp'
+import * as path from 'path'
+import * as ts from 'gulp-typescript'
+import { fork } from 'child_process'
 
 const ROOT = path.join(__dirname, '..')
 const TS_CONFIG = path.join(ROOT, 'server', 'tsconfig.json')
@@ -12,7 +12,7 @@ const BUILT_JS = path.join(DIST, 'index.js')
 let proc = null
 const tsProject = ts.createProject(TS_CONFIG)
 
-function build () {
+export function build () {
   return gulp.src(TS_FILES)
     .pipe(tsProject())
     .on('error', function () {
@@ -23,7 +23,7 @@ function build () {
     .js.pipe(gulp.dest(DIST))
 }
 
-function stop (done) {
+export function stop (done) {
   if (proc) {
     proc.on('exit', () => { done() })
     proc.kill()
@@ -32,16 +32,12 @@ function stop (done) {
   }
 }
 
-function start () {
-  proc = fork(BUILT_JS, {
-    silent: false
-  })
+export function start () {
+  proc = fork(BUILT_JS)
 }
 
-function development () {
+export function development () {
   gulp.watch(TS_FILES, ['server.start'])
 }
-
-module.exports = { build, stop, start, development }
 
 function noop () {}
