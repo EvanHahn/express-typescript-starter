@@ -3,24 +3,28 @@
   "private": true,
   "scripts": {
     "gulp": "gulp",
+    "start": "gulp start",
     "test": "gulp test"
   },
   "devDependencies": {
     "@types/express": "^4.0.35",
     "@types/gulp": "^4.0.2",
     "@types/rimraf": "0.0.28",
+    "@types/supertest": "^2.0.0",
     "ava": "^0.19.1",
     "gulp": "^3.9.1",
     "gulp-ava": "^0.16.0",
     "gulp-tslint": "^8.0.0",
     "gulp-typescript": "^3.1.6",
     "rimraf": "^2.6.1",
+    "supertest": "^3.0.0",
     "ts-node": "^3.0.2",
     "tslint": "^5.1.0",
     "tslint-config-standard": "^5.0.2",
     "typescript": "rc"
   },
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta11"
   }
 }
