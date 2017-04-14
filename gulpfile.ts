@@ -7,3 +7,4 @@ import './tasks/test'
 
 gulp.task('start', ['env.production', 'server.start'])
 gulp.task('development', ['env.development', 'server.development'])
+gulp.task('test', ['test.lint', 'test.run'])

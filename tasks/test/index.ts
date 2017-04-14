@@ -30,7 +30,6 @@ gulp.task('test.watch', ['test'], function () {
   gulp.watch(FILES_AFFECTED_BY_TESTS, ['test'])
 })
 
-gulp.task('test', ['test.lint', 'test.build'], function () {
-  return gulp.src(DIST_TEST_FILES)
-    .pipe(ava())
+gulp.task('test.run', ['test.build'], function () {
+  return gulp.src(DIST_TEST_FILES).pipe(ava())
 })
