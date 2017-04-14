@@ -17,10 +17,10 @@ gulp.task('app.stop', function (done: () => any) {
   }
 })
 
-gulp.task('app.restart', ['app.stop', 'app.build.server'], function () {
-  proc = childProcess.fork(BUILT_MAIN)
-})
+gulp.task('app.restart', ['app.build.server', 'app.stop'], startServer)
 
-gulp.task('app.start', ['app.build'], function () {
+gulp.task('app.start', ['app.build'], startServer)
+
+function startServer () {
   proc = childProcess.fork(BUILT_MAIN)
-})
+}
