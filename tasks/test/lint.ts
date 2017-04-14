@@ -12,7 +12,7 @@ const TS_FILES: string[] = [
   '!' + path.join(ROOT, 'node_modules', '**/*')
 ]
 
-gulp.task('test.lint', function () {
+gulp.task('test.lint', ['env.test'], function () {
   const program = tslint.Linter.createProgram(TSLINT_PATH)
 
   return gulp.src(TS_FILES)

@@ -1,6 +1,6 @@
 import test from 'ava'
 import * as supertest from 'supertest'
-import app from '../../server'
+import app from '../app'
 
 test(function disablesXPoweredBy (t) {
   t.true(app.disabled('x-powered-by'))

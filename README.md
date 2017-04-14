@@ -11,7 +11,7 @@ here are some things you can do:
 
 - `gulp test` runs tests
 - `gulp test.lint` lints the files
-- `gulp start` starts the server in production mode
-- `gulp development` starts the server in development mode
+- `gulp start` starts the app in production mode
+- `gulp development` starts the app in development mode
 
 what *can't* you do with this

@@ -9,22 +9,29 @@
   "devDependencies": {
     "@types/express": "^4.0.35",
     "@types/gulp": "^4.0.2",
+    "@types/morgan": "^1.7.32",
     "@types/rimraf": "0.0.28",
     "@types/supertest": "^2.0.0",
     "ava": "^0.19.1",
+    "browserify": "^14.3.0",
     "gulp": "^3.9.1",
     "gulp-ava": "^0.16.0",
     "gulp-tslint": "^8.0.0",
     "gulp-typescript": "^3.1.6",
     "rimraf": "^2.6.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-typescript": "^0.8.1",
     "supertest": "^3.0.0",
     "ts-node": "^3.0.2",
+    "tsify": "^3.0.1",
     "tslint": "^5.1.0",
     "tslint-config-standard": "^5.0.2",
     "typescript": "rc"
   },
   "dependencies": {
+    "dns-prefetch-control": "^0.1.0",
     "express": "^4.15.2",
+    "morgan": "^1.8.1",
     "pug": "^2.0.0-beta11"
   }
 }
