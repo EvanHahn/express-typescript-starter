@@ -4,7 +4,7 @@ import * as ts from 'gulp-typescript'
 
 const ROOT = join(__dirname, '..', '..')
 const TS_CONFIG = join(ROOT, 'tsconfig.json')
-export const SERVER_FILES_SRC = [
+export const SERVER_FILES_SRC: string[] = [
   join(ROOT, 'app', '**/*.ts'),
   '!' + join(ROOT, 'app', 'assets', '**/*.ts')
 ]
