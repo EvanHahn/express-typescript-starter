@@ -9,9 +9,12 @@ everything is done with gulp. you can `npm install gulp-cli -g` and then run thi
 
 here are some things you can do:
 
-- `gulp test` runs tests
-- `gulp test.lint` lints the files
 - `gulp start` starts the app in production mode
 - `gulp development` starts the app in development mode
+- `gulp test` runs tests
+- `gulp test.lint` lints the files
+- `gulp build` readies the app for a production release (from inside `dist/app`)
+
+`dist/app` needs an `npm install` but is otherwise ready to go
 
 what *can't* you do with this

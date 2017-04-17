@@ -6,12 +6,14 @@ import { SERVER_FILES_SRC } from './build-server'
 import { PUBLIC_FILES_SRC } from './build-public'
 import { JAVASCRIPT_ASSET_FILES_SRC, STYLESHEET_ASSET_FILES_SRC } from './build-assets'
 import { VIEW_FILES_SRC } from './build-views'
+import './build-packagejson'
 
 gulp.task('app.build', [
   'app.build.server',
   'app.build.assets',
   'app.build.public',
-  'app.build.views'
+  'app.build.views',
+  'app.build.packagejson'
 ])
 
 gulp.task('app.development', ['app.start'], function () {
